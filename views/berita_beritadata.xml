@@ -15,6 +15,7 @@
                     <field name="tanggal" />
                     <field name="kategori" />
                     <field name="teks" />
+                    <field name="tl_bukti_file" />
                 </tree>
             </field>
         </record>
@@ -35,6 +36,7 @@
                                 <field name="tanggal" />
                                 <field name="kategori" />
                                 <field name="teks" />
+                                <field name="tl_bukti_file" />
                             </group>
                         </group>
                     </sheet>

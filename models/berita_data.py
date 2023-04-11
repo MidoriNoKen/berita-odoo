@@ -11,4 +11,5 @@ class berita_data(models.Model):
     tanggal = fields.Date(String='Tanggal Posting', required=True)
     kategori = fields.Text(String='Kategori', required=True)
     teks = fields.Text(String='Teks Berita', required=True)
+    tl_bukti_file = fields.Binary(String='File Bukti', attachment=True, required=True)
 
