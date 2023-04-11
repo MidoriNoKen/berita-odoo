@@ -1,0 +1,6 @@
+<odoo>
+    <data>
+        <!-- Menu Data -->
+        <menuitem id="berita_data" name="Berita" sequence="10" web_icon="berita,static/description/icon.png"/>
+    </data>
+</odoo>

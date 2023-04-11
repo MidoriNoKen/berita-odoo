@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- tree view -->
+        <record id="view_berita_beritadata_tree" model="ir.ui.view">
+            <field name="name">berita_beritadata_tree</field>
+            <field name="model">berita.beritadata</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Data Berita">
+                    <field name="name" />
+                    <field name="judul" />
+                    <field name="penulis" />
+                    <field name="tanggal" />
+                    <field name="kategori" />
+                    <field name="teks" />
+                </tree>
+            </field>
+        </record>
+        <!-- form view -->
+        <record id="view_berita_beritadata_form" model="ir.ui.view">
+            <field name="name">berita_beritadata_form</field>
+            <field name="model">berita.beritadata</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Data Berita">
+                    <sheet>
+                        <group>
+                            <group string="Data Utama" col="4" colspan="4">
+                                <field name="name" string="ID Berita" />
+                                <field name="judul" />
+                                <field name="penulis" />
+                                <field name="tanggal" />
+                                <field name="kategori" />
+                                <field name="teks" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Search -->
+        <record id="view_berita_beritadata_search" model="ir.ui.view">
+            <field name="name">berita_beritadata</field>
+            <field name="model">berita.beritadata</field>
+            <field name="arch" type="xml">
+                <search string="Data Berita">
+                    <filter string="Name" name="filter_by_name" domain="[('name','=','')]" />
+                    <field name="name" select="True" />
+                    <group string="Group By..">
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!-- kanban -->
+        <record id="view_berita_beritadata_kanban" model="ir.ui.view">
+            <field name="name">berita_beritadata</field>
+            <field name="model">berita.beritadata</field>
+            <field name="arch" type="xml">
+                <kanban version="7.0">
+                    <field name="id" />
+                    <field name="name" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <a type="open">
+                                            <field name="name" />
+                                        </a>
+                                    </h4>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!-- graph -->
+        <record id="view_berita_beritadata_graph" model="ir.ui.view">
+            <field name="name">berita_beritadata</field>
+            <field name="model">berita.beritadata</field>
+            <field name="arch" type="xml">
+                <graph string="Hobi" type="bar">
+                </graph>
+            </field>
+        </record>
+        <!-- action window -->
+        <record id="action_berita_beritadata" model="ir.actions.act_window">
+            <field name="name">Berita</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">berita.beritadata</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{"search_default_fieldname":1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Klik 'NEW' untuk menambah data Berita
+                </p>
+                <p>
+                    Kamu belum memiliki data berita apapun
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_berita_beritadata" name="Berita" action="action_berita_beritadata" sequence="30" web_icon="berita,static/description/icon.png"/>
+    </data>
+</odoo>
+
+
+
+ 
