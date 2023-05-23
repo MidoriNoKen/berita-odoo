@@ -6,7 +6,7 @@ class berita_data(models.Model):
     _description = 'berita.beritadata'
 
     name = fields.Char(String='ID Berita', required=True)
-    proyek = fields.Many2one('project.project', String='Nama Proyek', required=True)
+    proyek = fields.many2one('project.project', String='Nama Proyek', required=True)
     judul = fields.Char(String='Judul', required=True)
     penulis = fields.Char(String='Penulis', required=True)
     tanggal = fields.Date(String='Tanggal Posting', required=True)
